@@ -33,7 +33,7 @@ env:
 jobs:
   build:
     name: Build OpenWrt
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu:latest
 
     steps:
       - name: Checkout
@@ -51,7 +51,7 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo -E apt-get -qq update
-          sudo -E apt-get -qq install asciidoc binutils bzip2 flex git-core g++ gcc util-linux gawk help2man intltool libelf-dev zlib1g-dev make libncurses5-dev libssl-dev patch perl-modules python2-dev unzip wget gettext xsltproc zlib1g-dev
+          sudo -E apt-get -qq install asciidoc binutils bzip2 flex git-core g++ gcc util-linux gawk help2man intltool libelf-dev zlib1g-dev make libncurses5-dev libssl-dev patch perl-modules python3-dev unzip wget gettext xsltproc zlib1g-dev
           sudo -E apt-get -qq autoremove --purge
           sudo -E apt-get -qq clean
           sudo timedatectl set-timezone "Asia/Shanghai"
